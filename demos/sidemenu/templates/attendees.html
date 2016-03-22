@@ -1,0 +1,16 @@
+<ion-view view-title="Asistentes al Evento">
+  <ion-content>
+    <div class="list">
+      <ion-toggle ng-repeat="attendee in attendees | orderBy:'firstname' | orderBy:'lastname'" ng-model="attendee.arrived" ng-change="arrivedChange(attendee)">
+        {{ attendee.firstname }}
+        {{ attendee.lastname }}
+      </ion-toggle>
+      <div class="item item-divider">
+        Actividad
+      </div>
+      <div class="item" ng-repeat="msg in activity">
+        {{ msg }}
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
