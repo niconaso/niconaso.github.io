@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>Listado</title>
+
+    <link href="../../ionic/css/ionic.css" rel="stylesheet">
+    <script src="../../ionic/js/ionic.bundle.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <script src="index.js"></script>
+  </head>
+
+  <body ng-controller="MyCtrl">
+
+    <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline" ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+      </div>
+      <h1 class="title">Lista</h1>
+      <div class="buttons">
+        <button class="button" ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+          Reordenar
+        </button>
+      </div>
+    </ion-header-bar>
+
+    <ion-content>
+
+      <!-- The list directive is great, but be sure to also checkout the collection repeat directive when scrolling through large lists -->
+
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items" item="item" href="#/item/{{item.id}}" class="item-remove-animate">
+          Item
+          {{ item.id }}
+          <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)"></ion-delete-button>
+          <ion-option-button class="button-assertive" ng-click="edit(item)">
+            Editar
+          </ion-option-button>
+          <ion-option-button class="button-calm" ng-click="share(item)">
+            Compartir
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
+  </body>
+</html>
