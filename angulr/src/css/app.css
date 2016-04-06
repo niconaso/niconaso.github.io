@@ -475,6 +475,8 @@ a.list-group-item.hover {
   border-top: 1px solid #eaedef;
 }
 
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
   padding: 8px 15px;
@@ -882,7 +884,7 @@ body {
 
 .navbar-brand {
   display: inline-block;
-  float: none;
+  float: none !important;
   height: auto;
   padding: 0 20px;
   font-size: 20px;
@@ -1042,10 +1044,19 @@ body {
 }
 
 @media (max-width: 767px) {
+  body {
+    height: auto;
+    min-height: 100%;
+  }
+  .navbar-fixed-bottom {
+    position: fixed;
+  }
   .app-aside {
     float: none;
   }
   .app-content-full {
+    position: relative;
+    top: 0;
     width: 100% !important;
   }
   .hbox-auto-xs {
@@ -1267,7 +1278,7 @@ html.bg {
   }
   .app-aside-folded .navi > ul > li > a i {
     display: block;
-    float: none;
+    float: none !important;
     width: auto;
     margin: 0;
     font-size: 16px;
@@ -1324,6 +1335,10 @@ html.bg {
 }
 
 @media (max-width: 767px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
   .app {
     overflow-x: hidden;
   }
@@ -1334,7 +1349,7 @@ html.bg {
             transition: transform 0.2s ease;
   }
   .off-screen {
-    position: absolute;
+    position: fixed;
     top: 50px;
     bottom: 0;
     z-index: 1010;
@@ -1346,7 +1361,7 @@ html.bg {
     -webkit-overflow-scrolling: touch;
   }
   .off-screen + * {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
@@ -1387,7 +1402,8 @@ html.bg {
 @media (min-width: 992px) {
   .app-aside-dock .app-content,
   .app-aside-dock .app-footer {
-    margin-left: 0;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
   }
   .app-aside-dock .app-aside-footer ~ div {
     padding-bottom: 0;
@@ -2227,8 +2243,8 @@ fieldset[disabled] .btn-black.active {
   right: -240px;
   z-index: 1050;
   width: 240px;
-  -webkit-transition: right 0.2s;
-          transition: right 0.2s;
+  -webkit-transition: all 0.2s;
+          transition: all 0.2s;
 }
 
 .settings.active {
@@ -2394,6 +2410,7 @@ fieldset[disabled] .btn-black.active {
 .tl-header {
   display: block;
   width: 12em;
+  margin-right: 2px;
   margin-left: 2px;
   text-align: center;
 }
@@ -2692,7 +2709,8 @@ fieldset[disabled] .i-checks input + i:before {
   z-index: 0;
 }
 
-#flotTip {
+#flotTip,
+.flotTip {
   z-index: 100;
   padding: 4px 10px;
   font-size: 12px;
@@ -2913,9 +2931,8 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-gd {
-  background-image: -webkit-gradient(linear, left 0, left 100%, from(rgba(40, 50, 60, 0)), to(rgba(40, 50, 60, 0.075)));
-  background-image: -webkit-linear-gradient(top, rgba(40, 50, 60, 0), 0, rgba(40, 50, 60, 0.075), 100%);
-  background-image: -moz-linear-gradient(top, rgba(40, 50, 60, 0) 0, rgba(40, 50, 60, 0.075) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(40, 50, 60, 0) 0, rgba(40, 50, 60, 0.075) 100%);
+  background-image: -o-linear-gradient(top, rgba(40, 50, 60, 0) 0, rgba(40, 50, 60, 0.075) 100%);
   background-image: linear-gradient(to bottom, rgba(40, 50, 60, 0) 0, rgba(40, 50, 60, 0.075) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0028323c', endColorstr='#1328323c', GradientType=0);
@@ -2923,9 +2940,8 @@ fieldset[disabled] .i-checks input + i:before {
 }
 
 .bg-gd-dk {
-  background-image: -webkit-gradient(linear, left 10%, left 100%, from(rgba(40, 50, 60, 0)), to(rgba(40, 50, 60, 0.5)));
-  background-image: -webkit-linear-gradient(top, rgba(40, 50, 60, 0), 10%, rgba(40, 50, 60, 0.5), 100%);
-  background-image: -moz-linear-gradient(top, rgba(40, 50, 60, 0) 10%, rgba(40, 50, 60, 0.5) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(40, 50, 60, 0) 10%, rgba(40, 50, 60, 0.5) 100%);
+  background-image: -o-linear-gradient(top, rgba(40, 50, 60, 0) 10%, rgba(40, 50, 60, 0.5) 100%);
   background-image: linear-gradient(to bottom, rgba(40, 50, 60, 0) 10%, rgba(40, 50, 60, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0028323c', endColorstr='#8028323c', GradientType=0);

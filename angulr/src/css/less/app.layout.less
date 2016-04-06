@@ -200,7 +200,7 @@ body{
 }
 
 .navbar-brand{
-	float: none;
+	float: none !important;
 	text-align: center;
 	font-size: 20px;
 	font-weight: 700;
@@ -379,10 +379,19 @@ body{
 }
 // xs
 @media (max-width: 767px) {
+	body{
+		height:auto;
+		min-height: 100%;
+	}
+	.navbar-fixed-bottom{
+		position: fixed;
+	}
 	.app-aside{
 		float: none;
 	}
 	.app-content-full{
+		position: relative;
+		top: 0;
 		width: 100% !important;
 	}
 	.hbox-auto-xs{

@@ -63,7 +63,8 @@ angular.module('ui.jq', ['ui.load']).
         function refresh(){
           // If ui-refresh is used, re-fire the the method upon every change
           if (attrs.uiRefresh) {
-            scope.$watch(attrs.uiRefresh, function() {
+            scope.$watch(attrs.uiRefresh, function(newValue, oldValue) {
+              if(newValue == oldValue) return;
               callPlugin();
             });
           }

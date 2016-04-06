@@ -51,6 +51,7 @@
   bottom: 0;
 }
 .slider.slider-vertical .slider-handle {
+  left: 0;
   margin-left: -10px;
   margin-top: -10px;
 }

@@ -7,13 +7,13 @@ angular.module('app')
     function(              $scope,   $translate,   $localStorage,   $window ) {
       // add 'ie' classes to html
       var isIE = !!navigator.userAgent.match(/MSIE/i);
-      isIE && angular.element($window.document.body).addClass('ie');
-      isSmartDevice( $window ) && angular.element($window.document.body).addClass('smart');
+      if(isIE){ angular.element($window.document.body).addClass('ie');}
+      if(isSmartDevice( $window ) ){ angular.element($window.document.body).addClass('smart')};
 
       // config
       $scope.app = {
         name: 'Angulr',
-        version: '2.0.2',
+        version: '2.2.0',
         // for chart colors
         color: {
           primary: '#7266ba',
