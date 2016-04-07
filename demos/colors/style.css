@@ -1,3 +1,7 @@
+body, ion-content {
+  background: white;
+}
+
 .list.color-list-demo .item {
     padding: 14px 15px 14px 15px;
 }
