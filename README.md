@@ -5,9 +5,9 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=niconaso" alt="niconaso" /></a> </p>
 
-- 🔭 I’m currently working on [Eiwa](eiwa.ag)
+- 🔭 I’m currently working on [Eiwa](https://eiwa.ag)
 
-- 💬 Ask me about **Angular, Capacitor, Ionic**
+- 💬 Ask me about **Angular, CapacitorJS, Ionic Framework, MicroFrontends**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
